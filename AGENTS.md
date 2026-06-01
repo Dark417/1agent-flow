@@ -43,6 +43,15 @@ python patterns/google-adk/<pattern>/agent.py
 python patterns/amazon-strands/<pattern>/agent.py
 ```
 
+## How to test
+
+The smoke tests need no API keys or SDKs — they compile every example, check the
+two providers stay structurally parallel, and verify no real secrets leaked.
+
+```bash
+make smoke            # or: python tests/smoke_test.py
+```
+
 ## Conventions
 
 - **Never commit real secrets.** API keys are always placeholders read from the
@@ -67,8 +76,8 @@ python patterns/amazon-strands/<pattern>/agent.py
 
 Before considering a change complete:
 
-- [ ] `python -c "import ast; ast.parse(open(f).read())"` passes for any edited `.py`.
-- [ ] No real credentials were introduced (`grep -rn "AKIA\|sk-" .` returns nothing real).
+- [ ] `make smoke` passes (compiles examples, checks structure + secrets).
+- [ ] No real credentials were introduced (the smoke test enforces this).
 - [ ] Google + Amazon implementations of a touched pattern still match conceptually.
 - [ ] The relevant design doc reflects any behavior change.
 
