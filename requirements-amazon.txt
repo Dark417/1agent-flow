@@ -1,0 +1,5 @@
+# Amazon Strands Agents examples
+# Docs: https://strandsagents.com/
+strands-agents>=0.1.0
+strands-agents-tools>=0.1.0
+python-dotenv>=1.0.0

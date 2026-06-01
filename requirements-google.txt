@@ -1,0 +1,4 @@
+# Google ADK examples
+# Docs: https://google.github.io/adk-docs/
+google-adk>=1.0.0
+python-dotenv>=1.0.0
