@@ -79,6 +79,16 @@ what output to expect.
 4. Notice what is the same (the *pattern*) and what differs (the *SDK*).
 5. Tweak the example, rerun, and watch the behavior change.
 
+## Testing
+
+A dependency-free, credential-free smoke test validates that every example
+compiles, the two providers stay structurally parallel, and no real secrets
+slipped in:
+
+```bash
+make smoke      # or: python tests/smoke_test.py
+```
+
 ## Provider notes
 
 | | Google ADK | Amazon Strands Agents |
